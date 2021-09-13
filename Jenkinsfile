@@ -2,8 +2,7 @@ pipeline {
     agent any
     tools {
         maven 'maven3.8'
-        jdk 'jdk8'
-    }
+       }
     stages {
         stage ('Clone') {
             steps {
@@ -13,7 +12,7 @@ pipeline {
         stage("build & SonarQube analysis") {
             agent any
             steps {
-              withSonarQubeEnv('sonarserver') {
+              withSonarQubeEnv('sonarqubeserver') {
                 sh 'mvn clean package sonar:sonar'
               }
             }
