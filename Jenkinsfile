@@ -9,6 +9,7 @@ pipeline {
             steps {
                 git url: 'https://github.com/kohbah/simple-java-maven-app.git'
             }
+        }
         stage('Build') {
             steps {
                 sh './mvnw package'
